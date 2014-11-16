@@ -2,21 +2,61 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
+#################################################################
 # Variables
+#################################################################
+
 PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
 
+################################################################
 # Aliases
-export LANG=en_US.UTF-8
-export HISTSIZE=5000
+################################################################
+
 alias ls='ls --color=always'; export ls
 
-# Show git path
+################################################################
+# Shell config
+################################################################
+
+# Enable 256 colors
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+    export TERM='gnome-256color';
+elif infocmp xterm-256color >/dev/null 2>&1; then
+    export TERM='xterm-256color';
+else
+    export TERM='xterm-color'
+fi
+
+# Enable UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Enable large history
+export HISTSIZE=5000
+
+################################################################
+# Shell prompt
+################################################################
+
 source ~/.bash/git-prompt
 source ~/.bash/git-completion
-PS1='\[\e[0;32m\]\u@\h \[\e[0;33m\]\w\[\e[0;36m\]$(__git_ps1 " (%s)")\n\[\e[m\]$ '
+source ~/.bash/colours
+
+# Set the terminal title to the current working directory.
+PS1="\[\033]0;\w\007\]\[${bold}\]";
+PS1+="\[${userStyle}\]\u"
+PS1+="\[${white}\] at \[${hostStyle}\]\h"
+PS1+="\[${white}\] in \[${green}\]\w"
+PS1+="\$(prompt_git \"${white} on ${violet}\")\n"
+PS1+="\[${white}\]\$ \[${reset}\]"
+export PS1
+
+PS2="\[${yellow}\]→ \[${reset}\]"
+export PS2
 
 # Show process name in tab title bar
 #   source: http://stackoverflow.com/q/10546217
@@ -32,16 +72,3 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Enable 256 colors
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-    export TERM='xterm-256color'
-else
-    export TERM='xterm-color'
-fi
-
-# Enable UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-
-#SHELL=/bin/bash
