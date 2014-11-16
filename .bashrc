@@ -1,3 +1,10 @@
+## .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 # Variables
 PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
 
@@ -9,7 +16,7 @@ alias ls='ls --color=always'; export ls
 # Show git path
 source ~/.bash/git-prompt
 source ~/.bash/git-completion
-PS1="\[\e[0;32m\]\u@\h \[\e[0;33m\]\w \[\e[0;36m\]\$(parse_git_branch_or_tag)\n\[\e[m\]$ "
+PS1='\[\e[0;32m\]\u@\h \[\e[0;33m\]\w\[\e[0;36m\]$(__git_ps1 " (%s)")\n\[\e[m\]$ '
 
 # Show process name in tab title bar
 #   source: http://stackoverflow.com/q/10546217
@@ -27,9 +34,9 @@ esac
 
 # Enable 256 colors
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-        export TERM='xterm-256color'
+    export TERM='xterm-256color'
 else
-        export TERM='xterm-color'
+    export TERM='xterm-color'
 fi
 
 # Enable UTF-8
