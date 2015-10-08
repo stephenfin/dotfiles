@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ## .bashrc
 
 # If not running interactively, don't do anything
@@ -23,18 +24,24 @@ PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
 
 alias ls='ls --color=always'; export ls
 
+function cdiff() {
+    diff -u $@ | sed "s/^-/\x1b[41m-/;s/^+/\x1b[42m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
+}
+
 ################################################################
 # Shell config
 ################################################################
 
 # Enable 256 colors
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-    export TERM='gnome-256color';
-elif infocmp xterm-256color >/dev/null 2>&1; then
-    export TERM='xterm-256color';
+    TERM='gnome-256color';
 else
-    export TERM='xterm-color'
+    TERM='linux'
 fi
+
+# Enable sane home/pgup/pgdown/end keys
+# http://askubuntu.com/a/206722
+stty sane
 
 # Enable UTF-8
 export LC_ALL=en_US.UTF-8
@@ -62,11 +69,6 @@ if [ -z "$DISPLAY" ]; then
     export DISPLAY=$(echo $IP_ADDR:0)
 fi
 
-# Enable sane home/pgup/pgdow/end keys
-# http://askubuntu.com/a/206722
-stty sane
-export TERM=linux
-
 #################################################################
 # Keyboard bindings
 #################################################################
@@ -80,19 +82,16 @@ export TERM=linux
 
 source ~/.bash/git-prompt
 source ~/.bash/git-completion
-source ~/.bash/colours
 
 # Set the terminal title to the current working directory.
-PS1="\[\033]0;\w\007\]\[${bold}\]";
-PS1+="\[${userStyle}\]\u"
-PS1+="\[${white}\] at \[${hostStyle}\]\h"
-PS1+="\[${white}\] in \[${green}\]\w"
-PS1+="\$(prompt_git \"${white} on ${violet}\")\n"
-PS1+="\[${white}\]\$ \[${reset}\]"
-export PS1
+PS1="\[\033]0;\w\007\]\[\]";
+PS1+="\[\e[1;33m\]\u"
+PS1+="\[\e[1;37m\] at \[\e[1;31m\]\h"
+PS1+="\[\e[1;37m\] in \[\e[1;32m\]\w"
+PS1+="\$(prompt_git \"\e[1;37m on \e[1;35m\")\n"
+PS1+="\[\e[1;37m\]\$ \[\e[0m\]"
 
-PS2="\[${yellow}\]→ \[${reset}\]"
-export PS2
+PS2="\[\e[1;33m\]→ \[\e[0m\]"
 
 # Show process name in tab title bar
 #   source: http://stackoverflow.com/q/10546217
@@ -102,7 +101,7 @@ case "$TERM" in
 xterm*|rxvt*)
     # don't print full PWD path:
     #   source: http://stackoverflow.com/q/1371261
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD##*/}\007"'
+    export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD##*/}\007"'
     ;;
 *)
     ;;
