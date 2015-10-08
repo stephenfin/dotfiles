@@ -25,7 +25,7 @@ PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
 alias ls='ls --color=always'; export ls
 
 function cdiff() {
-    diff -u $@ | sed "s/^-/\x1b[41m-/;s/^+/\x1b[42m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
+    diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
 }
 
 ################################################################
