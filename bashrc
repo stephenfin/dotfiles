@@ -38,6 +38,24 @@ export LANGUAGE=en_US.UTF-8
 # Enable large history
 export HISTSIZE=5000
 
+# Enable X11 forwarding
+if [ -z "$DISPLAY" ]; then
+    IP_ADDR=$(echo $SSH_CLIENT | awk '{{print $1}}')
+    export DISPLAY=$(echo $IP_ADDR:0)
+fi
+
+# Enable sane home/pgup/pgdow/end keys
+# http://askubuntu.com/a/206722
+stty sane
+export TERM=linux
+
+#################################################################
+# Keyboard bindings
+#################################################################
+
+#bind '"\e[A": history-search-backward'
+#bind '"\e[B": history-search-forward'
+
 ################################################################
 # Shell prompt
 ################################################################
