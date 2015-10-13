@@ -66,7 +66,14 @@ set timeoutlen=50
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("autocmd")
+    " Enable storing of last location
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+    " Enable INI formatting of devstack 'local.conf' files
+    au BufNewFile,BufFilePre,BufRead local.conf set filetype=dosini
+
+    " Enable Markdown formatting of '.md' files
+    au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -82,10 +89,8 @@ Plugin 'gmarik/Vundle.vim'
 " Other plugins
 Plugin 'bling/vim-airline'
 
+" Bundles
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'desert-warm-256'
-Bundle 'monokai'
-Bundle 'vim-scripts/busybee'
 Bundle 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
@@ -105,4 +110,7 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 
 " Set color scheme
+
+set background=dark
+colorscheme solarized
 
