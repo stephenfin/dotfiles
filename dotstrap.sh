@@ -5,6 +5,9 @@
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles="vimrc vim inputrc bashrc bash"
 
+# download submodules
+git submodule init
+
 # symlink dotfiles to the the home dir, each prefixed by a dot (.)
 for file in $dotfiles; do
     rm -rf ~/.$file

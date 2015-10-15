@@ -92,6 +92,7 @@ Plugin 'bling/vim-airline'
 " Bundles
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'rhysd/conflict-marker.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -101,15 +102,23 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-airline
+" bing/vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:airline_theme             = 'luna'
-let g:airline_powerline_fonts   = 1
+let g:airline_theme = 'luna'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 
-" Set color scheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" rhysd/conflict-marker.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:conflict_marker_enable_mappings = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" altercation/vim-colors-solarized
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set background=dark
 colorscheme solarized
