@@ -1,0 +1,7 @@
+[DEFAULT]
+
+[NOVA]
+projects = nova,python-novaclient
+
+[NEUTRON]
+projects = neutron,python-neutronclient
