@@ -1,1 +1,15 @@
+# Enable next/previous word via [Ctrl]+[Right/Left Arrow]
+# from: http://unix.stackexchange.com/q/10806/
+# For gnome terminal and xterm
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+# For PuTTY
+"\eOC": forward-word
+"\eOD": backward-word
+# For rxvt
+"\eOc": forward-word
+"\eOd": backward-word
+
+# case insensitive tab completion of file paths
+# from: https://coderwall.com/p/nugcea
 set completion-ignore-case on
