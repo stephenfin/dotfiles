@@ -73,7 +73,7 @@ fi
 # ssh agent
 ################################################################
 
-function start_ssh() {
+function ssh_start() {
     eval `ssh-agent -s`
     ssh-add
 }
