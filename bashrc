@@ -116,3 +116,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+###############################################################
+# Additional settings
+#
+
+if [ -e "~/.bash/proxy" ]; then
+    source "~/.bash/proxy"
+fi
