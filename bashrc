@@ -27,6 +27,7 @@ alias ls='ls --color=always'; export ls
 function cdiff() {
     diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
 }
+alias diff='cdiff'
 
 ################################################################
 # Shell config
