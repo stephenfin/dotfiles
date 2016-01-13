@@ -6,7 +6,7 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles="vimrc vim inputrc bashrc bash next_review"
 
 # download submodules
-git submodule init
+git submodule update --init --recursive
 
 function cdiff() {
     diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
@@ -34,6 +34,7 @@ for file in $dotfiles; do
     echo "Created $dst"
 done
 
+# (optional) reload environment
 read -p "Reload environment now? [y]es/[n]o " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
