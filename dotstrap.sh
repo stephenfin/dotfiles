@@ -32,7 +32,18 @@ for file in $dotfiles; do
     rm -rf "$dst"
     ln -s "$src" "$dst"
     echo "Created $dst"
+
+    if [[ $file == 'vimrc' ]]; then
+        _vim_installed=1
+    fi
 done
+
+# install vim plugins
+if [[ $_vim_installed == 1 ]]; then
+    vim +PluginInstall +qall
+else
+    echo "Skipping Vim plugin install"
+fi
 
 # (optional) reload environment
 read -p "Reload environment now? [y]es/[n]o " -n 1 -r
