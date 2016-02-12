@@ -124,3 +124,16 @@ esac
 if [ -e ~/.bash/proxy ]; then
     source ~/.bash/proxy
 fi
+
+###############################################################
+# Python virtualenvwrapper
+###############################################################
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/development
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
