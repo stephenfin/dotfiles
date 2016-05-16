@@ -83,6 +83,9 @@ if has("autocmd")
 
     " Enable Markdown formatting of '.md' files
     au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+    " Set custom formatting style on per-file basis
+    au FileType python,rst setlocal textwidth=79
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
