@@ -48,10 +48,6 @@ set smarttab
 " Enable 256 colors
 set t_Co=256
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-
 " Linebreak on 500 characters
 set lbr
 set tw=500
@@ -105,6 +101,7 @@ Plugin 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'rhysd/conflict-marker.vim'
+Bundle 'tpope/vim-sleuth'
 
 call vundle#end()
 filetype plugin indent on
