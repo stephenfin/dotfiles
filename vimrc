@@ -97,12 +97,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Other plugins
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Bundles
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ntpeters/vim-better-whitespace'
-Bundle 'rhysd/conflict-marker.vim'
-Bundle 'tpope/vim-sleuth'
+Plugin 'rhysd/conflict-marker.vim'
+Plugin 'tpope/vim-sleuth'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 filetype plugin indent on
