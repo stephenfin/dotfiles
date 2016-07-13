@@ -21,6 +21,9 @@ set splitright        " ensure horizontal splits go to right of current pane
 " Enable syntax highlighting
 syntax enable
 
+" Dark background
+set background=dark
+
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -29,6 +32,7 @@ set ffs=unix,dos,mac
 
 " Enable highlighting of EOL
 set list
+
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set listchars=eol:$,tab:>-
 
@@ -101,6 +105,7 @@ Plugin 'rhysd/conflict-marker.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype plugin indent on
@@ -123,11 +128,3 @@ let g:airline#extensions#branch#enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:conflict_marker_enable_mappings = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" altercation/vim-colors-solarized
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set background=dark
-colorscheme solarized
-
