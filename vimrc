@@ -103,9 +103,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rhysd/conflict-marker.vim'
 Plugin 'tpope/vim-sleuth'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'cespare/vim-toml'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on
@@ -128,3 +128,20 @@ let g:airline#extensions#branch#enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:conflict_marker_enable_mappings = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle this using F4
+" Courtesy of Mark Gray <mark.d.gray@intel.com>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
