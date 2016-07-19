@@ -12,38 +12,31 @@ function cdiff() {
     diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
 }
 
+# backup existing dotfiles
+for file in $dotfiles; do
+    src="$HOME/.$file"
+    dst="$HOME/.olddot/$(date +%s)/.$file"
+
+    mkdir -p "$HOME/.olddot/$(date +%s)"
+
+    if [ -e "$src" ]; then
+        echo "Backing up existing file: .$file"
+        cp -rf "$src" "$dst"
+    fi
+done
+
 # symlink dotfiles to the the home dir, each prefixed by a dot (.)
 for file in $dotfiles; do
     src="$dir/$file"
     dst="$HOME/.$file"
 
-    if [ -e "$dst" ]; then
-        echo "WARNING! File already exists. Here's a comparison:"
-        echo
-        cdiff "$dst" "$src"
-        read -p "Do you wish to overwrite file? ([y]es/[n]o) " -n 1 -r
-        echo
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-            echo "Skipping this file"
-            continue
-        fi
-    fi
-
     rm -rf "$dst"
     ln -s "$src" "$dst"
     echo "Created $dst"
-
-    if [[ $file == 'vimrc' ]]; then
-        _vim_installed=1
-    fi
 done
 
 # install vim plugins
-if [[ $_vim_installed == 1 ]]; then
-    vim +PluginInstall +qall
-else
-    echo "Skipping Vim plugin install"
-fi
+vim +PluginInstall +qall
 
 # (optional) reload environment
 read -p "Reload environment now? [y]es/[n]o " -n 1 -r
