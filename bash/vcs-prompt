@@ -1,5 +1,6 @@
+#!/usr/bin/env bash
 
-prompt_git() {
+prompt_vcs() {
     local s='';
     local branchName='';
 
@@ -43,9 +44,31 @@ prompt_git() {
 
         [ -n "${s}" ] && s=" [${s}]";
 
-        echo -e "${1}${branchName}${blue}${s}";
+        echo -e "${1}${branchName}${s}";
+    # Check if the current directory is a Mecurial repository.
+    elif [ $(hg root &>/dev/null; echo "${?}") == '0' ]; then
+
+        # Check for uncommited changes in the index.
+        if [ -n "$(hg status 2> /dev/null | awk '$1 == "A"' | head -c1)" ]; then
+            s+='+'
+        fi
+
+        # Check for unstaged changes.
+        s+=$(hg status 2> /dev/null | \
+             awk '$1 == "M" { print "!" } $1 == "R" { print "!" } $1 == "!" { print "!"}' | \
+             head -c1)
+
+        # Check for untracked files.
+        if [ -n "$(hg status 2> /dev/null | awk '$1 == "?"' | head -c1)" ]; then
+            s+='?'
+        fi
+
+        branchName="$(hg branch 2> /dev/null)"
+
+        [ -n "${s}" ] && s=" [${s}]"
+
+        echo -e "${1}${branchName}${s}";
     else
         return;
     fi;
 }
-

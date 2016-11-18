@@ -90,7 +90,7 @@ function ssh_start() {
 # Shell prompt
 ################################################################
 
-source ~/.bash/git-prompt
+source ~/.bash/vcs-prompt
 source ~/.bash/git-completion
 
 # Set the terminal title to the current working directory.
@@ -98,7 +98,7 @@ PS1="\[\033]0;\w\007\]\[\]";
 PS1+="\[\e[1;33m\]\u"
 PS1+="\[\e[1;37m\] at \[\e[1;31m\]\h"
 PS1+="\[\e[1;37m\] in \[\e[1;32m\]\w"
-PS1+="\$(prompt_git \"\e[1;37m on \e[1;35m\")\n"
+PS1+="\$(prompt_vcs \"\e[1;37m on \e[1;35m\")\n"
 PS1+="\[\e[1;37m\]\$ \[\e[0m\]"
 
 PS2="\[\e[1;33m\]→ \[\e[0m\]"
