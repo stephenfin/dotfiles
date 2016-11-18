@@ -64,6 +64,9 @@ set wrap "Wrap lines
 set ambiwidth=double
 set timeoutlen=50
 
+" Enable automatic text width-setting
+filetype plugin indent on
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key remappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,6 +89,7 @@ if has("autocmd")
 
     " Set custom formatting style on per-file basis
     au FileType python,rst setlocal textwidth=79
+    au FileType gitcommit setlocal textwidth=72
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,20 +106,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rhysd/conflict-marker.vim'
-Plugin 'tpope/vim-sleuth'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'cespare/vim-toml'
 Plugin 'scrooloose/syntastic'
 
 call vundle#end()
-filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" bing/vim-airline
+" vim-airline/vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline_theme = 'luna'
@@ -130,7 +132,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:conflict_marker_enable_mappings = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
+" scrooloose/syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Toggle this using F4
