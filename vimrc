@@ -90,6 +90,7 @@ if has("autocmd")
     " Set custom formatting style on per-file basis
     au FileType python,rst setlocal textwidth=79
     au FileType gitcommit setlocal textwidth=72
+    au FileType hgcommit setlocal textwidth=72
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
