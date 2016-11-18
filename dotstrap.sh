@@ -3,7 +3,7 @@
 # create symlinks from the home directory to dotfiles in ~/dotfiles
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-dotfiles="vimrc vim inputrc bashrc bash next_review"
+dotfiles="vimrc vim inputrc bashrc bash next_review hgrc"
 
 # download submodules
 git submodule update --init --recursive
