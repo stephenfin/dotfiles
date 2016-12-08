@@ -33,13 +33,6 @@ alias diff='cdiff'
 # Shell config
 ################################################################
 
-# Enable 256 colors
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-    TERM='gnome-256color';
-else
-    TERM='linux'
-fi
-
 # Enable sane home/pgup/pgdown/end keys
 # http://askubuntu.com/a/206722
 stty sane
