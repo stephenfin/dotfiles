@@ -102,7 +102,11 @@ case "$TERM" in
 linux|xterm*|rxvt*)
     # don't print full PWD path:
     #   source: http://stackoverflow.com/q/1371261
-    export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD##*/}\007"'
+    export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD##*/}\007"'
+    ;;
+screen*)
+    # tmux equivalent of the above
+    export PROMPT_COMMAND='echo -ne "\033k${HOSTNAME}: ${PWD##*/}\033\\" '
     ;;
 *)
     ;;
