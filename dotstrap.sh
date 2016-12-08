@@ -8,10 +8,6 @@ dotfiles="vimrc vim inputrc bashrc bash next_review hgrc gitconfig"
 # download submodules
 git submodule update --init --recursive
 
-function cdiff() {
-    diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
-}
-
 # backup existing dotfiles
 for file in $dotfiles; do
     src="$HOME/.$file"
