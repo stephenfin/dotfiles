@@ -93,9 +93,7 @@ function ssh_start() {
 source ~/.bash/vcs-prompt
 source ~/.bash/git-completion
 
-# Set the terminal title to the current working directory.
-PS1="\[\033]0;\w\007\]\[\]";
-PS1+="\[\e[1;33m\]\u"
+PS1="\[\e[1;33m\]\u"
 PS1+="\[\e[1;37m\] at \[\e[1;31m\]\h"
 PS1+="\[\e[1;37m\] in \[\e[1;32m\]\w"
 PS1+="\$(prompt_vcs \"\e[1;37m on \e[1;35m\")\n"
@@ -108,7 +106,7 @@ PS2="\[\e[1;33m\]→ \[\e[0m\]"
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
+linux|xterm*|rxvt*)
     # don't print full PWD path:
     #   source: http://stackoverflow.com/q/1371261
     export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD##*/}\007"'
