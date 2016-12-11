@@ -85,7 +85,7 @@ if has("autocmd")
     au BufNewFile,BufFilePre,BufRead local.conf set filetype=dosini
 
     " Enable Markdown formatting of '.md' files
-    au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+    au BufNewFile,BufFilePre,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 
     " Set custom formatting style on per-file basis
     au FileType python,rst setlocal textwidth=79
@@ -110,6 +110,9 @@ Plugin 'rhysd/conflict-marker.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'cespare/vim-toml'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'mhinz/vim-signify'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -121,7 +124,7 @@ call vundle#end()
 " vim-airline/vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:airline_theme = 'luna'
+let g:airline_theme = 'zenburn'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
