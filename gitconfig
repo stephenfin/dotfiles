@@ -3,6 +3,7 @@
 [diff]
 	renamelimit = 2000
 	renames = true
+	tool = meld
 [push]
 	default = simple
 [credential]
