@@ -111,10 +111,16 @@ if has("autocmd")
     " Enable Markdown formatting of '.md' files
     au BufNewFile,BufFilePre,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 
+    " Enable mail formatting of 'mutt' files
+    aut BufRead,BufNewFile *mutt-* set filetype=mail
+
     " Set custom formatting style on per-file basis
-    au FileType python,rst setlocal textwidth=79
-    au FileType gitcommit setlocal textwidth=72
-    au FileType hgcommit setlocal textwidth=72
+    au FileType python setlocal textwidth=79
+    au FileType json,html setlocal shiftwidth=2
+    au FileType rst setlocal textwidth=79 spell
+    au FileType markdown setlocal textwidth=79 spell
+    au FileType gitcommit setlocal textwidth=72 spell
+    au FileType hgcommit setlocal textwidth=72 spell
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,6 +143,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 
@@ -148,7 +155,7 @@ call vundle#end()
 " vim-airline/vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:airline_theme = 'zenburn'
+let g:airline_theme = 'luna'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
