@@ -1,5 +1,6 @@
 # example user config (see "hg help config" for more info)
 [ui]
+username = Stephen Finucane <stephen@that.guru>
 editor = vim
 
 [extensions]
@@ -37,7 +38,7 @@ diff.trailingwhitespace = bold red_background
 pager = LESS='FRX' less
 
 [alias]
-show = diff -c tip
+show = log -pr
 
 [defaults]
 cdiff = -q
