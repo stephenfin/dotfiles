@@ -11,5 +11,14 @@
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 [rerere]
 	enabled = true
+[remote "origin"]
+	prune = true
+[user]
+	name = Stephen Finucane
+[fetch]
+	prune = true
+[help]
+	autocorrect = 1
