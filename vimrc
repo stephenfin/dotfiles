@@ -1,14 +1,14 @@
-set nocompatible      "Turn off compatibility mode"
-set autoindent        "Automatically indent code"
-set showmatch         "show bracket matches"
-set laststatus=2      "show two status lines"
-set number            "enable line numbers"
-set ruler             "show ruler at bottom
-set incsearch         "move pages as match found"
-set hlsearch          "highlight search"
-set ignorecase        "case insesitive search"
-set confirm           "show confirm dialog if file has unsaved changes"
-set backspace=indent,eol,start       "make backspace work like most other programs"
+set nocompatible      "turn off compatibility mode
+set smartindent       "use context-aware code indentation
+set showmatch         "show bracket matches
+set laststatus=2      "show two status lines
+set number            "enable line numbers
+set ruler             "show ruler at botto
+set incsearch         "move pages as match found
+set hlsearch          "highlight search
+set ignorecase        "case insesitive search
+set confirm           "show confirm dialog if file has unsaved changes
+set backspace=indent,eol,start       "make backspace work like most other programs
 set t_kb=
 
 set splitbelow        " ensure vertical splits go below current pane
