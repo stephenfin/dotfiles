@@ -116,8 +116,8 @@ esac
 # Additional settings
 #
 
-if [ -e ~/.bash/proxy ]; then
-    source ~/.bash/proxy
+if [ -e ~/.bash/internals ]; then
+    source ~/.bash/internals
 fi
 
 ###############################################################
