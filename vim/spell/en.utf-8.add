@@ -38,3 +38,11 @@ Automigrated
 config
 Zuul
 automigrated
+noVNC
+VeNCrypt
+VNC
+x509
+libvirt
+QEMU
+hostname
+hostnames
