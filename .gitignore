@@ -3,6 +3,7 @@ vim/bundle/*
 !vim/bundle/Vundle.vim
 vim/spell/*.spl
 bash/internals
+*.swp
 
 # Sublime Text 3 internals
 # From https://packagecontrol.io/docs/syncing
