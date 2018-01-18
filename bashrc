@@ -132,3 +132,10 @@ fi
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
+
+###############################################################
+# Workarounds
+###############################################################
+
+# From https://bbs.archlinux.org/viewtopic.php?id=205961
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
