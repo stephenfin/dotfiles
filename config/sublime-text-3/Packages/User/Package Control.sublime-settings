@@ -5,7 +5,14 @@
 	],
 	"installed_packages":
 	[
+		"AutoWrap",
+		"BracketHighlighter",
+		"Colorsublime",
+		"GitGutter",
+		"Gitignore",
 		"Package Control",
-		"Theme - Afterglow"
+		"Predawn",
+		"SublimeLinter",
+		"SublimeLinter-flake8"
 	]
 }

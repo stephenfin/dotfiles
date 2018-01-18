@@ -1,7 +1,42 @@
 {
+	"show_encoding": true,
+	"show_line_endings": true,
+	"draw_white_space": "all",
+	"color_scheme": "Packages/Colorsublime - Themes/Afterglow.tmTheme",
+	"extra_file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"extra_folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"theme": "Afterglow-orange.sublime-theme"
+	"predawn_tabs_medium": true,
+	"theme": "predawn.sublime-theme"
 }
