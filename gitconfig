@@ -15,6 +15,7 @@
 	lastedited = log --pretty=format: --name-only -n 1
 	start-redhat = !git config user.email stephenfin@redhat.com && git review -s
 	start-personal = !git config user.email stephen@that.guru
+	refresh = !git checkout master && git fetch --all --prune && git merge --ff-only
 [rerere]
 	enabled = true
 [remote "origin"]
@@ -25,3 +26,5 @@
 	prune = true
 [help]
 	autocorrect = 1
+[color]
+	ui = auto
