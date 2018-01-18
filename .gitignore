@@ -3,3 +3,14 @@ vim/bundle/*
 !vim/bundle/Vundle.vim
 vim/spell/*.spl
 bash/internals
+
+# Sublime Text 3 internals
+# From https://packagecontrol.io/docs/syncing
+config/sublime-text-3/Packages/User/Package Control.cache/
+config/sublime-text-3/Packages/User/Package Control.ca-list
+config/sublime-text-3/Packages/User/Package Control.ca-bundle
+config/sublime-text-3/Packages/User/Package Control.ca-certs/
+config/sublime-text-3/Packages/User/Package Control.last-run
+config/sublime-text-3/Packages/User/Package Control.merged-ca-bundle
+config/sublime-text-3/Packages/User/Package Control.system-ca-bundle
+config/sublime-text-3/Packages/User/Package Control.user-ca-bundle

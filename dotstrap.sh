@@ -21,7 +21,7 @@ for file in $dotfiles; do
     fi
 done
 
-# symlink dotfiles to the the home dir, each prefixed by a dot (.)
+# symlink dotfiles to the home dir, each prefixed by a dot (.)
 for file in $dotfiles; do
     src="$dir/$file"
     dst="$HOME/.$file"
@@ -30,6 +30,15 @@ for file in $dotfiles; do
     ln -s "$src" "$dst"
     echo "Created $dst"
 done
+
+# symlink configfiles to the home dir
+# TODO(stephenfin): Make this generic once we synchronize more config options
+src="$dir/config/sublime-text-3/Packages/User"
+out="$HOME/.config/sublime-text-3/Packages/"
+dst="$out/User"
+mkdir -p "$out"
+ln -s "$src" "$dst"
+echo "Created $dst"
 
 # install vim plugins
 vim +PluginInstall +qall
