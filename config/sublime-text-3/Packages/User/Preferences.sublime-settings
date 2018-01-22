@@ -1,8 +1,6 @@
 {
-	"show_encoding": true,
-	"show_line_endings": true,
+	"color_scheme": "Packages/User/SublimeLinter/Brogrammer (SL).tmTheme",
 	"draw_white_space": "all",
-	"color_scheme": "Packages/Colorsublime - Themes/Afterglow.tmTheme",
 	"extra_file_exclude_patterns":
 	[
 		"*.pyc",
@@ -38,5 +36,7 @@
 		"Vintage"
 	],
 	"predawn_tabs_medium": true,
+	"show_encoding": true,
+	"show_line_endings": true,
 	"theme": "predawn.sublime-theme"
 }

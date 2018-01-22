@@ -8,11 +8,13 @@
 		"AutoWrap",
 		"BracketHighlighter",
 		"Colorsublime",
+		"ExportHtml",
 		"GitGutter",
 		"Gitignore",
 		"Package Control",
 		"Predawn",
 		"SublimeLinter",
-		"SublimeLinter-flake8"
+		"SublimeLinter-flake8",
+		"Whitespace"
 	]
 }
