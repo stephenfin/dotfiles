@@ -4,6 +4,15 @@
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles="vimrc vim inputrc bashrc bash next_review hgrc gitconfig tmux.conf"
+packages="vim"
+
+# ensure all required packages have been installed
+for package in $packages; do
+    if ! command -v $package >/dev/null 2>&1; then
+        echo "You need to install $package"
+        exit 1
+    fi
+done
 
 # download submodules
 git submodule update --init --recursive
