@@ -115,10 +115,11 @@ if has("autocmd")
     aut BufRead,BufNewFile *mutt-* set filetype=mail
 
     " Set custom formatting style on per-file basis
-    au FileType python setlocal textwidth=79
+    au FileType sh setlocal textwidth=79 shiftwidth=4
+    au FileType python setlocal textwidth=79 shiftwidth=4
     au FileType json,html setlocal shiftwidth=2
-    au FileType rst setlocal textwidth=79 spell
-    au FileType markdown setlocal textwidth=79 spell
+    au FileType rst setlocal textwidth=79 shiftwidth=4 spell
+    au FileType markdown setlocal textwidth=79 shiftwidth=4 spell
     au FileType gitcommit setlocal textwidth=72 spell
     au FileType hgcommit setlocal textwidth=72 spell
 endif
