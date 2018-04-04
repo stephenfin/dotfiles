@@ -97,16 +97,17 @@ PS2="\[\e[1;33m\]→ \[\e[0m\]"
 # Show process name in tab title bar
 #   source: http://stackoverflow.com/q/10546217
 
-# If this is an xterm set the title to user@host:dir
+# If this is an xterm set the title to user@host: dir
 case "$TERM" in
 linux|xterm*|rxvt*)
-    # don't print full PWD path:
-    #   source: http://stackoverflow.com/q/1371261
-    export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD##*/}\007"'
+    # don't print full PWD path or HOSTNAME:
+    #   source: https://stackoverflow.com/q/1371261
+    #   source: https://stackoverflow.com/q/5268513
+    export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}: ${PWD##*/}\007"'
     ;;
 screen*)
     # tmux equivalent of the above
-    export PROMPT_COMMAND='echo -ne "\033k${HOSTNAME}: ${PWD##*/}\033\\" '
+    export PROMPT_COMMAND='echo -ne "\033k${HOSTNAME%%.*}: ${PWD##*/}\033\\" '
     ;;
 *)
     ;;
