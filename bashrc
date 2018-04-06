@@ -16,7 +16,7 @@ fi
 # Variables
 #################################################################
 
-PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
+PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/
 
 ################################################################
 # Aliases
@@ -28,6 +28,8 @@ function cdiff() {
     diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
 }
 alias diff='cdiff'
+
+alias qag='ag --ignore tests --python'
 
 ################################################################
 # Shell config
@@ -140,3 +142,6 @@ fi
 
 # From https://bbs.archlinux.org/viewtopic.php?id=205961
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+
+# added by travis gem
+[ -f /home/sfinucan/.travis/travis.sh ] && source /home/sfinucan/.travis/travis.sh
