@@ -11,8 +11,10 @@
 		"ExportHtml",
 		"GitGutter",
 		"Gitignore",
+		"JSON Reindent",
 		"Package Control",
 		"Predawn",
+		"ShellScriptImproved",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
 		"Whitespace"
