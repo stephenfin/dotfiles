@@ -66,15 +66,6 @@ if [ -z "$DISPLAY" ]; then
 fi
 
 ################################################################
-# ssh agent
-################################################################
-
-function ssh_start() {
-    eval `ssh-agent -s`
-    ssh-add
-}
-
-################################################################
 # Keyboard bindings
 ################################################################
 
@@ -116,32 +107,19 @@ screen*)
 esac
 
 ###############################################################
-# Additional settings
-#
-
-if [ -e ~/.bash/internals ]; then
-    source ~/.bash/internals
-fi
-
-###############################################################
-# Python virtualenvwrapper
-###############################################################
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/development
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    source /usr/bin/virtualenvwrapper.sh
-fi
-
-###############################################################
 # Workarounds
 ###############################################################
 
 # From https://bbs.archlinux.org/viewtopic.php?id=205961
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+
+###############################################################
+# Additional settings
+###############################################################
+
+if [ -e ~/.bash/internals ]; then
+    source ~/.bash/internals
+fi
 
 # added by travis gem
 [ -f /home/sfinucan/.travis/travis.sh ] && source /home/sfinucan/.travis/travis.sh
