@@ -3,7 +3,7 @@
 # create symlinks from the home directory to dotfiles in ~/dotfiles
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-dotfiles="vimrc vim inputrc bashrc bash next_review hgrc gitconfig tmux.conf"
+dotfiles="vimrc vim inputrc bashrc bash next_review hgrc gitconfig gitignore tmux.conf"
 packages="vim"
 
 # ensure all required packages have been installed
