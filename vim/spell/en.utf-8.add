@@ -77,3 +77,10 @@ VXLAN
 GRE
 VLAN
 SR-IOV
+FOSDEM
+UUID
+dataplane
+affinitization
+virtualize
+deployer
+misconfigurations
