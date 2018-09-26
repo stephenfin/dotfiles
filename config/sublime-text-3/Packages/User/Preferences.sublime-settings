@@ -31,6 +31,7 @@
 		".hg",
 		"CVS"
 	],
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -38,5 +39,5 @@
 	"predawn_tabs_medium": true,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"theme": "predawn.sublime-theme"
+	"theme": "predawn-DEV.sublime-theme"
 }
