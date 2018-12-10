@@ -1,3 +1,16 @@
+# Editor files
 .vscode
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
+*.swp
+
+# Misc development files
+*.sqlite3
+
+# Patch artifacts
+*.orig
+*.rej
+
+# Working directories
+.venv
