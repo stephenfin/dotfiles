@@ -49,6 +49,9 @@ mkdir -p "$out"
 ln -s "$src" "$dst"
 echo "Created $dst"
 
+# set vim as default editor
+update-alternatives --set editor /usr/bin/vim.basic
+
 # install vim plugins
 vim +PluginInstall +qall
 
