@@ -125,6 +125,7 @@ if has("autocmd")
     au FileType markdown setlocal textwidth=79 shiftwidth=4 spell
     au FileType gitcommit,gitsendemail setlocal textwidth=72 spell
     au FileType hgcommit setlocal textwidth=72 spell
+    au FileType yaml setlocal shiftwidth=2
 
     " Enable Python formatting of '.pyi' files. This comes after the general
     " Python setting
