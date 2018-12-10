@@ -14,8 +14,8 @@
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 	lastedited = log --pretty=format: --name-only -n 1
-	start-redhat = !git config user.email stephenfin@redhat.com && git review -s
-	start-personal = !git config user.email stephen@that.guru
+	start-redhat = config user.email stephenfin@redhat.com
+	start-personal = config user.email stephen@that.guru
 	refresh = !git checkout master && git fetch --all --prune && git merge --ff-only
 [rerere]
 	enabled = true
@@ -29,3 +29,5 @@
 	autocorrect = 1
 [color]
 	ui = auto
+[format]
+	pretty = fuller
