@@ -31,3 +31,5 @@
 	ui = auto
 [format]
 	pretty = fuller
+[checkout]
+	defaultRemote = origin
