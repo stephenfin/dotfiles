@@ -77,7 +77,6 @@ fi
 ################################################################
 
 source ~/.bash/vcs-prompt
-source ~/.bash/git-completion
 
 PS1="\[\e[1;33m\]\u"
 PS1+="\[\e[1;37m\] at \[\e[1;31m\]\h"
