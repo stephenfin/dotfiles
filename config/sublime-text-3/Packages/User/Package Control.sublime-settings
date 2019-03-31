@@ -5,19 +5,26 @@
 	],
 	"installed_packages":
 	[
+		"Asciidoctor",
 		"AutoWrap",
 		"BracketHighlighter",
 		"Colorsublime",
 		"ExportHtml",
+		"Git",
 		"GitGutter",
 		"Gitignore",
+		"Highlight",
+		"INI",
 		"JSON Reindent",
 		"LSP",
+		"Markdown Extended",
+		"Monokai Extended",
 		"Package Control",
 		"Predawn",
 		"ShellScriptImproved",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
+		"Vuejs Snippets",
 		"Whitespace"
 	]
 }
