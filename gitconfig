@@ -33,3 +33,5 @@
 	pretty = fuller
 [checkout]
 	defaultRemote = origin
+[url "https://git.openstack.org/"]
+	insteadof = git://git.openstack.org/
