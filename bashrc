@@ -16,7 +16,7 @@ fi
 # Variables
 #################################################################
 
-PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/
+PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/:$HOME/.local/bin
 
 ################################################################
 # Aliases
