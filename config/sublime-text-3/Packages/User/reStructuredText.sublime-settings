@@ -3,4 +3,5 @@
 	"rulers": [79],
 	"auto_wrap" : true,
 	"translate_tabs_to_spaces": true,
+	"spell_check": true,
 }

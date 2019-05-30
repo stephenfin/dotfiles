@@ -1,4 +1,25 @@
 {
+	"added_words":
+	[
+		"realtime",
+		"hugepages",
+		"datacenter",
+		"Epyc",
+		"cacheways",
+		"cron",
+		"libvirt",
+		"virt",
+		"L3",
+		"config",
+		"deployer",
+		"prefilter",
+		"metadata",
+		"prioritization",
+		"affined",
+		"admin",
+		"virtualized",
+		"filesystem"
+	],
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
@@ -36,6 +57,15 @@
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"",
+		"",
+		"cachetune",
+		"cputune",
+		"memorytune",
+		"osc"
 	],
 	"predawn_tabs_medium": true,
 	"show_encoding": true,
