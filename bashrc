@@ -16,11 +16,10 @@ fi
 # Variables
 #################################################################
 
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/:$HOME/.local/bin:$NPM_PACKAGES/bin"
-
 NPM_PACKAGES="$HOME/.npm-packages"
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/:$HOME/.local/bin:$NPM_PACKAGES/bin"
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 ################################################################
 # Aliases

@@ -109,3 +109,7 @@ Ocata
 HyperV
 keypairs
 vCPU
+overallocated
+datacenter
+unshelve
+Xen
