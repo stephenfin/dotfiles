@@ -18,7 +18,10 @@
 		"affined",
 		"admin",
 		"virtualized",
-		"filesystem"
+		"filesystem",
+		"hypervisors",
+		"keypair",
+		"Ubuntu"
 	],
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"draw_white_space": "all",
@@ -63,8 +66,11 @@
 		"",
 		"",
 		"cachetune",
+		"conf",
 		"cputune",
+		"ini",
 		"memorytune",
+		"openstack",
 		"osc"
 	],
 	"predawn_tabs_medium": true,
