@@ -5,6 +5,7 @@
 	renamelimit = 2000
 	renames = true
 	tool = meld
+	noprefix = true
 [push]
 	default = simple
 [credential]
