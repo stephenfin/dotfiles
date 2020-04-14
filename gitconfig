@@ -34,3 +34,7 @@
 	defaultRemote = origin
 [url "https://git.openstack.org/"]
 	insteadof = git://git.openstack.org/
+[rebase]
+	rescheduleFailedExec = true
+[tag]
+	sort = version:refname
