@@ -13,3 +13,7 @@
 # case insensitive tab completion of file paths
 # from: https://coderwall.com/p/nugcea
 set completion-ignore-case on
+
+# disable bell
+# from: https://blog.sleeplessbeastie.eu/2012/12/28/debian-how-to-turn-off-the-system-bell/
+set bell-style none
