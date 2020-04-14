@@ -12,6 +12,7 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+
 #################################################################
 # Variables
 #################################################################
@@ -21,18 +22,38 @@ NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/:$HOME/.local/bin:$NPM_PACKAGES/bin"
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+
 ################################################################
 # Aliases
 ################################################################
 
-alias ls='ls --color=always'; export ls
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias dd='dd status=progress'
+alias _='sudo'
 
 function cdiff() {
     diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
 }
 alias diff='cdiff'
+alias less='less -R'
 
 alias qag='ag --ignore tests --python'
+
 
 ################################################################
 # Shell config
@@ -62,18 +83,12 @@ HISTFILESIZE=10000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Enable X11 forwarding
+# enable X11 forwarding
 if [ -z "$DISPLAY" ]; then
     IP_ADDR=$(echo $SSH_CLIENT | awk '{{print $1}}')
     export DISPLAY=$(echo $IP_ADDR:0)
 fi
 
-################################################################
-# Keyboard bindings
-################################################################
-
-#bind '"\e[A": history-search-backward'
-#bind '"\e[B": history-search-forward'
 
 ################################################################
 # Shell prompt
@@ -108,12 +123,6 @@ screen*)
     ;;
 esac
 
-###############################################################
-# Workarounds
-###############################################################
-
-# From https://bbs.archlinux.org/viewtopic.php?id=205961
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 ###############################################################
 # Additional settings
