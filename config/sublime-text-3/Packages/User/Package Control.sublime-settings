@@ -5,7 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"Asciidoctor",
 		"AutoWrap",
 		"BracketHighlighter",
 		"Colorsublime",
@@ -14,6 +13,7 @@
 		"GitGutter",
 		"Gitignore",
 		"Highlight",
+		"Highlight Trailing Whitespace",
 		"Indent XML",
 		"INI",
 		"JSON Reindent",
@@ -28,6 +28,7 @@
 		"ShellScriptImproved",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
+		"Vue Syntax Highlight",
 		"Vuejs Complete Package",
 		"Vuejs Snippets",
 		"Whitespace"
