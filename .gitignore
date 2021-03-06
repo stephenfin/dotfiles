@@ -1,6 +1,6 @@
 vim/.netrwhist
-vim/bundle/*
-!vim/bundle/Vundle.vim
+vim/autoload/plug.vim
+vim/plugged/*
 vim/spell/*.spl
 bash/internals
 *.swp

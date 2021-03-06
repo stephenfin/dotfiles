@@ -14,9 +14,6 @@ for package in $packages; do
     fi
 done
 
-# download submodules
-git submodule update --init --recursive
-
 # backup existing dotfiles
 for file in $dotfiles; do
     src="$HOME/.$file"
@@ -53,7 +50,7 @@ echo "Created $dst"
 update-alternatives --set editor /usr/bin/vim.basic
 
 # install vim plugins
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 # (optional) reload environment
 read -p "Reload environment now? [y]es/[n]o " -n 1 -r

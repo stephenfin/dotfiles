@@ -105,58 +105,56 @@ inoremap <S-Tab> <C-V><Tab>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("autocmd")
-    " Enable storing of last location
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " Enable storing of last location
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-    " Enable INI formatting of devstack 'local.conf' files
-    au BufNewFile,BufFilePre,BufRead local.conf set filetype=dosini
+  " Enable INI formatting of devstack 'local.conf' files
+  au BufNewFile,BufFilePre,BufRead local.conf set filetype=dosini
 
-    " Enable Markdown formatting of '.md' files
-    au BufNewFile,BufFilePre,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+  " Enable Markdown formatting of '.md' files
+  au BufNewFile,BufFilePre,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 
-    " Enable mail formatting of 'mutt' files
-    aut BufRead,BufNewFile *mutt-* set filetype=mail
+  " Enable mail formatting of 'mutt' files
+  aut BufRead,BufNewFile *mutt-* set filetype=mail
 
-    " Set custom formatting style on per-file basis
-    au FileType sh setlocal textwidth=79 shiftwidth=4
-    au FileType python setlocal textwidth=79 shiftwidth=4
-    au FileType json,html setlocal shiftwidth=2
-    au FileType rst setlocal textwidth=79 shiftwidth=4 spell
-    au FileType markdown setlocal textwidth=79 shiftwidth=4 spell
-    au FileType gitcommit,gitsendemail setlocal textwidth=72 spell
-    au FileType hgcommit setlocal textwidth=72 spell
-    au FileType yaml setlocal shiftwidth=2
-    au FileType css setlocal shiftwidth=2
+  " Set custom formatting style on per-file basis
+  au FileType sh setlocal textwidth=79 shiftwidth=4
+  au FileType python setlocal textwidth=79 shiftwidth=4
+  au FileType json,html setlocal shiftwidth=2
+  au FileType rst setlocal textwidth=79 shiftwidth=4 spell
+  au FileType markdown setlocal textwidth=79 shiftwidth=4 spell
+  au FileType gitcommit,gitsendemail setlocal textwidth=72 spell
+  au FileType hgcommit setlocal textwidth=72 spell
+  au FileType yaml setlocal shiftwidth=2
+  au FileType css setlocal shiftwidth=2
 
-    " Enable Python formatting of '.pyi' files. This comes after the general
-    " Python setting
-    au BufNewFile,BufRead *.pyi set filetype=python textwidth=130
+  " Enable Python formatting of '.pyi' files. This comes after the general
+  " Python setting
+  au BufNewFile,BufRead *.pyi set filetype=python textwidth=130
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle package manager
+" Extensions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" Manage Vundle itself
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Other plugins
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rhysd/conflict-marker.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'cespare/vim-toml'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mhinz/vim-signify'
-Plugin 'tpope/vim-fugitive'
-Plugin 'posva/vim-vue'
-Plugin 'Glench/Vim-Jinja2-Syntax'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 
-call vundle#end()
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configuration
