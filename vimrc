@@ -142,9 +142,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -158,7 +158,7 @@ call plug#end()
 
 let g:airline_theme = 'luna'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,18 +168,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:conflict_marker_enable_mappings = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" scrooloose/syntastic
+" w0rp/ale
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Toggle this using F4
-" Courtesy of Mark Gray <mark.d.gray@intel.com>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
+let g:ale_virtualenv_dir_names = ['.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
