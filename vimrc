@@ -24,9 +24,6 @@ set splitright        " ensure horizontal splits go to right of current pane
 " Enable syntax highlighting
 syntax enable
 
-" Dark background
-set background=dark
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
