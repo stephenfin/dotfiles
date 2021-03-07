@@ -99,6 +99,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
+Plug 'sjl/badwolf'
+Plug 'sickill/vim-monokai'
 
 call plug#end()
 
@@ -108,7 +110,7 @@ call plug#end()
 
 " vim-airline/vim-airline
 
-let g:airline_theme = 'luna'
+let g:airline_theme = 'badwolf'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -120,3 +122,12 @@ let g:conflict_marker_enable_mappings = 1
 " w0rp/ale
 
 let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+
+" sjl/badwolf
+
+"colorscheme badwolf
+"let g:badwolf_darkgutter = 1
+
+" sickill/vim-monokai
+
+colorscheme monokai
