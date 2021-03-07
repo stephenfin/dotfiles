@@ -16,6 +16,7 @@ set nofoldenable      " require manual folding
 
 set splitbelow        " ensure vertical splits go below current pane
 set splitright        " ensure horizontal splits go to right of current pane
+set nojoinspaces      " don't insert two spaces after eol punctuation
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts
