@@ -119,4 +119,4 @@ let g:conflict_marker_enable_mappings = 1
 
 " w0rp/ale
 
-let g:ale_virtualenv_dir_names = ['.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
