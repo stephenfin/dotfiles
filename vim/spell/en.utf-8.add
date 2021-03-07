@@ -147,3 +147,4 @@ virtualenv
 pytest
 udev
 Ceph
+Finucane
