@@ -18,6 +18,7 @@
 	start-redhat = !git config user.name 'Stephen Finucane' && git config user.email stephenfin@redhat.com
 	start-personal = !git config user.name 'Stephen Finucane' && git config user.email stephen@that.guru
 	refresh = !git checkout master && git fetch --all --prune && git merge --ff-only
+	scratch = !git init && git start-personal && git commit --allow-empty -m 'Initial commit'
 [rerere]
 	enabled = true
 [remote "origin"]
@@ -36,5 +37,6 @@
 	insteadof = git://git.openstack.org/
 [rebase]
 	rescheduleFailedExec = true
+	autoSquash = true
 [tag]
 	sort = version:refname
