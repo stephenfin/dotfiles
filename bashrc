@@ -20,7 +20,6 @@ fi
 NPM_PACKAGES="$HOME/.npm-packages"
 
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/:$HOME/.local/bin:$NPM_PACKAGES/bin"
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 
 ################################################################
@@ -53,6 +52,10 @@ alias diff='cdiff'
 alias less='less -R'
 
 alias qag='ag --ignore tests --python'
+
+function pipver() {
+    curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([0-9.]*\).*/\1/p'
+}
 
 
 ################################################################
