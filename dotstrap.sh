@@ -37,14 +37,28 @@ for file in $dotfiles; do
     echo "Created $dst"
 done
 
-# symlink configfiles to the home dir
-# TODO(stephenfin): Make this generic once we synchronize more config options
-src="$dir/config/sublime-text-3/Packages/User"
-out="$HOME/.config/sublime-text-3/Packages/"
-dst="$out/User"
-mkdir -p "$out"
-ln -s "$src" "$dst"
-echo "Created $dst"
+read -p "Do you want to install Sublime Text configuration? [y]es/[n]o " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # install sublime text package manager
+    out="$HOME/.config/sublime-text-3/Installed Packages/"
+    if [ ! -f "$out/Package Control.sublime-package" ]; then
+        mkdir -p "$out"
+        wget "https://packagecontrol.io/Package%20Control.sublime-package" -P "$out"
+        echo "Installed Package Control"
+    else
+        echo "Package Control already installed"
+    fi
+
+    # symlink configfiles to the home dir
+    src="$dir/config/sublime-text-3/Packages/User"
+    out="$HOME/.config/sublime-text-3/Packages/"
+    dst="$out/User"
+    rm -rf "$dst"
+    mkdir -p "$out"
+    ln -s "$src" "$dst"
+    echo "Created $dst"
+fi
 
 # set vim as default editor
 sudo update-alternatives --set editor /usr/bin/vim.basic
