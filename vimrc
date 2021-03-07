@@ -33,12 +33,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" Enable highlighting of EOL
-set list
-
-"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set listchars=eol:$,tab:>-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
