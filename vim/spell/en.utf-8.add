@@ -148,3 +148,4 @@ pytest
 udev
 Ceph
 Finucane
+wildcards
