@@ -64,7 +64,7 @@ if has("autocmd")
   " Set custom formatting style on per-file basis
   autocmd FileType sh setlocal textwidth=79 shiftwidth=4
   autocmd FileType python setlocal textwidth=79 shiftwidth=4
-  autocmd FileType json,html setlocal shiftwidth=2
+  autocmd FileType json,html,htmldjango setlocal shiftwidth=2
   autocmd FileType rst setlocal textwidth=79 shiftwidth=4 spell
   autocmd FileType markdown setlocal textwidth=79 shiftwidth=4 spell
   autocmd FileType gitcommit,gitsendemail setlocal textwidth=72 spell
@@ -98,6 +98,7 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
 Plug 'sjl/badwolf'
 Plug 'sickill/vim-monokai'
