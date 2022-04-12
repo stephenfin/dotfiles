@@ -19,6 +19,9 @@
 	start-personal = !git config user.name 'Stephen Finucane' && git config user.email stephen@that.guru
 	refresh = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git fetch --all --prune && git merge --ff-only
 	scratch = !git init && git start-personal && git commit --allow-empty -m 'Initial commit'
+	edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
+	add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+	master-to-main = symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
 [rerere]
 	enabled = true
 [remote "origin"]
