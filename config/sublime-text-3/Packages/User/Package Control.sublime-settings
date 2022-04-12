@@ -17,8 +17,10 @@
 		"Indent XML",
 		"INI",
 		"JSON Reindent",
+		"LiveReload",
 		"LSP",
 		"Markdown Extended",
+		"Markdown HTML Preview",
 		"MarkdownLivePreview",
 		"MarkdownPreview",
 		"Monokai Extended",
@@ -31,6 +33,6 @@
 		"Vue Syntax Highlight",
 		"Vuejs Complete Package",
 		"Vuejs Snippets",
-		"Whitespace"
-	]
+		"Whitespace",
+	],
 }

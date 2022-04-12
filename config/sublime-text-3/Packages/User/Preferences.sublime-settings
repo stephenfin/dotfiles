@@ -59,7 +59,7 @@
 	"font_size": 10,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"ignored_words":
 	[
@@ -76,5 +76,6 @@
 	"predawn_tabs_medium": true,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"theme": "predawn-DEV.sublime-theme"
+	"theme": "predawn-DEV.sublime-theme",
+	"update_check": true,
 }
