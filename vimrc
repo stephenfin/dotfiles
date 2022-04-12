@@ -30,9 +30,10 @@ set linebreak                        " linebreak on 500 characters
 set textwidth=500                    " ...
 set autoindent                       " auto indent
 set smartindent                      " smart indent
-set wrap                             " wrap lines
+set nowrap                           " wrap lines
 set list                             " show tabs as characters (>-------)
-set listchars=tab:>-                 " ...
+"set listchars=tab:..                 " ...
+set listchars=tab:\ \ ┊,trail:.,extends:…,precedes:…
 
 syntax enable                        " enable syntax highlighting
 filetype plugin indent on            " enable automatic text width-setting
@@ -71,6 +72,7 @@ if has("autocmd")
   autocmd FileType hgcommit setlocal textwidth=72 spell
   autocmd FileType yaml setlocal shiftwidth=2
   autocmd FileType css setlocal shiftwidth=2
+  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
 
   " Enable Python formatting of '.pyi' files. This comes after the general
   " Python setting
