@@ -50,8 +50,11 @@ function cdiff() {
 }
 alias diff='cdiff'
 alias less='less -R'
+alias cat='bat'
 
 alias qag='ag --ignore tests --python'
+alias pag='ag --ignore tests --python'
+alias gag='ag --ignore "*_test.go" --ignore vendor --ignore tests --ignore test --go'
 
 function pipver() {
     curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([0-9.]*\).*/\1/p'
