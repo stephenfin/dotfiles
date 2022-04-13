@@ -34,6 +34,7 @@ set nowrap                           " wrap lines
 set list                             " show tabs as characters (>-------)
 "set listchars=tab:..                 " ...
 set listchars=tab:\ \ ┊,trail:.,extends:…,precedes:…
+set belloff=all                      " disable bell
 
 syntax enable                        " enable syntax highlighting
 filetype plugin indent on            " enable automatic text width-setting
