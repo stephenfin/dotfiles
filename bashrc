@@ -50,7 +50,10 @@ function cdiff() {
 }
 alias diff='cdiff'
 alias less='less -R'
-alias cat='bat'
+
+if command -v bat &> /dev/null; then
+    alias cat='bat'
+fi
 
 alias qag='ag --ignore tests --python'
 alias pag='ag --ignore tests --python'
