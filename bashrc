@@ -103,35 +103,39 @@ fi
 # Shell prompt
 ################################################################
 
-source ~/.bash/vcs-prompt
+# use starship if available, but fallback to bash if not
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+else
+    source ~/.bash/vcs-prompt
 
-PS1="\[\e[1;33m\]\u"
-PS1+="\[\e[1;37m\] at \[\e[1;31m\]\h"
-PS1+="\[\e[1;37m\] in \[\e[1;32m\]\w"
-PS1+="\$(prompt_vcs \"\e[1;37m on \e[1;35m\")\n"
-PS1+="\[\e[1;37m\]\$ \[\e[0m\]"
+    PS1="\[\e[1;33m\]\u"
+    PS1+="\[\e[1;37m\] at \[\e[1;31m\]\h"
+    PS1+="\[\e[1;37m\] in \[\e[1;32m\]\w"
+    PS1+="\$(prompt_vcs \"\e[1;37m on \e[1;35m\")\n"
+    PS1+="\[\e[1;37m\]\$ \[\e[0m\]"
 
-PS2="\[\e[1;33m\]→ \[\e[0m\]"
+    PS2="\[\e[1;33m\]→ \[\e[0m\]"
 
-# Show process name in tab title bar
-#   source: http://stackoverflow.com/q/10546217
+    # Show process name in tab title bar
+    #   source: http://stackoverflow.com/q/10546217
 
-# If this is an xterm set the title to user@host: dir
-case "$TERM" in
-linux|xterm*|rxvt*)
-    # don't print full PWD path or HOSTNAME:
-    #   source: https://stackoverflow.com/q/1371261
-    #   source: https://stackoverflow.com/q/5268513
-    export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}: ${PWD##*/}\007"'
-    ;;
-screen*)
-    # tmux equivalent of the above
-    export PROMPT_COMMAND='echo -ne "\033k${HOSTNAME%%.*}: ${PWD##*/}\033\\" '
-    ;;
-*)
-    ;;
-esac
-
+    # If this is an xterm set the title to user@host: dir
+    case "$TERM" in
+    linux|xterm*|rxvt*)
+        # don't print full PWD path or HOSTNAME:
+        #   source: https://stackoverflow.com/q/1371261
+        #   source: https://stackoverflow.com/q/5268513
+        export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}: ${PWD##*/}\007"'
+        ;;
+    screen*)
+        # tmux equivalent of the above
+        export PROMPT_COMMAND='echo -ne "\033k${HOSTNAME%%.*}: ${PWD##*/}\033\\" '
+        ;;
+    *)
+        ;;
+    esac
+fi
 
 ###############################################################
 # Additional settings
@@ -140,6 +144,3 @@ esac
 if [ -e ~/.bash/internals ]; then
     source ~/.bash/internals
 fi
-
-# added by travis gem
-[ -f /home/sfinucan/.travis/travis.sh ] && source /home/sfinucan/.travis/travis.sh
