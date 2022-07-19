@@ -21,7 +21,7 @@
 	scratch = !git init && git start-personal && git commit --allow-empty -m 'Initial commit'
 	edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
 	add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
-	master-to-main = symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+	master-to-main = !git branch -m master main && git fetch origin && git branch -u origin/main main && git remote set-head origin -a
 [rerere]
 	enabled = true
 [remote "origin"]
