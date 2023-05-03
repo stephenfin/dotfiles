@@ -4,6 +4,7 @@
 *.sublime-workspace
 *.code-workspace
 *.swp
+*.swo
 
 # Misc development files
 *.sqlite3
