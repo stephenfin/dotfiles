@@ -63,6 +63,12 @@ function pipver() {
     curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([0-9.]*\).*/\1/p'
 }
 
+if [[ -x $(command -v jq) ]]; then
+function jwtd() {
+     jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "${1}"
+     echo "Signature: $(echo "${1}" | awk -F'.' '{print $3}')"
+}
+fi
 
 ################################################################
 # Shell config
