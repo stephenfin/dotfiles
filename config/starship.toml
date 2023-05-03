@@ -24,18 +24,22 @@ $line_break\
 $container\
 $character"""
 
-[directory]
-truncate_to_repo = false
-style = "bold green"
-truncation_symbol = ".../"
-
-[hostname]
-ssh_only = false
-style = "bold red"
-
 [username]
 show_always = true
-format = "[$user]($style) on "
+style_user = "bold 199"
+format = "[$user]($style) in "
+
+[hostname]
+ssh_only = true
+style = "bold red"
+
+[directory]
+truncate_to_repo = false
+style = "bold yellow"
+truncation_symbol = "…/"
+
+[git_branch]
+style = "bold 135"
 
 [golang]
 format = 'via [$symbol]($style)'
