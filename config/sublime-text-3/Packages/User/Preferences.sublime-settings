@@ -21,7 +21,15 @@
 		"filesystem",
 		"hypervisors",
 		"keypair",
-		"Ubuntu"
+		"Ubuntu",
+		"backend",
+		"nullable",
+		"ostree",
+		"Kieran",
+		"Forde",
+		"kubelet",
+		"systemctl",
+		"oc",
 	],
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"draw_white_space": "all",
@@ -56,7 +64,7 @@
 		".hg",
 		"CVS"
 	],
-	"font_size": 10,
+	"font_size": 9,
 	"ignored_packages":
 	[
 		"Vintage",
@@ -65,13 +73,14 @@
 	[
 		"",
 		"",
+		"autogenerate",
 		"cachetune",
 		"conf",
 		"cputune",
 		"ini",
 		"memorytune",
 		"openstack",
-		"osc"
+		"osc",
 	],
 	"predawn_tabs_medium": true,
 	"show_encoding": true,
