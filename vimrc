@@ -43,8 +43,23 @@ filetype plugin indent on            " enable automatic text width-setting
 " Key remappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" set <leader> to -
+let mapleader = "-"
+
 " allow Ctrl+Shift+Tab to insert a real tab
 inoremap <S-Tab> <C-V><Tab>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tmux compatibility
+" from https://vi.stackexchange.com/a/28284
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if &term =~ "screen"
+    let &t_BE = "\e[?2004h"
+    let &t_BD = "\e[?2004l"
+    exec "set t_PS=\e[200~"
+    exec "set t_PE=\e[201~"
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
@@ -102,9 +117,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'sjl/badwolf'
 Plug 'sickill/vim-monokai'
+Plug 'glench/vim-jinja2-syntax'
+Plug 'editorconfig/editorconfig-vim'
+" Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -123,9 +141,26 @@ let g:airline#extensions#branch#enabled = 1
 
 let g:conflict_marker_enable_mappings = 1
 
-" w0rp/ale
+" dense-analysis/ale
 
 let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
+let g:ale_virtualtext_cursor = 'current'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" -- Keymaps
+nnoremap <silent> <Leader>le <Cmd>lopen<CR>
+nnoremap <silent> <Leader>lr <Cmd>ALERename<CR>
+nnoremap <silent> <Leader>la <Cmd>ALECodeAction<CR>
+nnoremap <silent> <Leader>ld <Cmd>ALEGoToDefinition<CR>
+nnoremap <silent> <Leader>lf <Cmd>ALEFix<CR>
+nnoremap <silent> <Leader>lh <Cmd>ALEHover<CR>
+nnoremap <silent> <Leader>li <Cmd>ALEInfo<CR>
 
 " sjl/badwolf
 
