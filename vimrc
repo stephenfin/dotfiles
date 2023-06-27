@@ -89,6 +89,7 @@ if has("autocmd")
   autocmd FileType yaml setlocal shiftwidth=2
   autocmd FileType css setlocal shiftwidth=2
   autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd FileType terraform setlocal shiftwidth=2
 
   " Enable Python formatting of '.pyi' files. This comes after the general
   " Python setting
