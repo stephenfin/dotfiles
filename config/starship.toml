@@ -1,45 +1,24 @@
-# based on https://starship.rs/presets/pastel-powerline.html without nerdfont requirements
-
 # "$schema" = 'https://starship.rs/config-schema.json'
-add_newline = false
-# format = """
-# $username\
-# $hostname\
-# $kubernetes\
-# $directory\
-# $git_branch\
-# $git_commit\
-# $git_state\
-# $git_metrics\
-# $git_status\
-# $docker_context\
-# $golang\
-# $python\
-# $openstack\
-# $env_var\
-# $custom\
-# $sudo\
-# $cmd_duration\
-# $line_break\
-# $container\
-# $character"""
 
+add_newline = false
 format = """
-[░▒▓](#9A348E)\
 $username\
-[](bg:#DA627D fg:#9A348E)\
+$hostname\
+$kubernetes\
 $directory\
-[](fg:#DA627D bg:#FFB787)\
 $git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
 $git_status\
-[](fg:#FFB787 bg:#86BBD8)\
+$hg_branch\
+$docker_context\
 $golang\
 $python\
-[](fg:#86BBD8 bg:#06969A)\
 $openstack\
-[](fg:#06969A bg:#33658A)\
-$docker_context\
-[ ](fg:#33658A)\
+$env_var\
+$custom\
+$sudo\
 $cmd_duration\
 $line_break\
 $container\
@@ -47,38 +26,24 @@ $character"""
 
 [username]
 show_always = true
-style_user = "bg:#9A348E #ffffff"
-style_root = "bg:#9A348E #ffffff"
-format = '[$user ]($style)'
-disabled = false
+style_user = "bold 199"
+format = "[$user]($style) in "
+
+[hostname]
+ssh_only = true
+style = "bold red"
 
 [directory]
-style = "bg:#DA627D #ffffff"
-format = "[ $path ]($style)"
-truncation_length = 3
+truncate_to_repo = false
+style = "bold yellow"
 truncation_symbol = "…/"
 
 [git_branch]
-style = "bg:#FFB787 #ffffff"
-format = '[ $symbol$branch ]($style)'
-
-[git_status]
-style = "bg:#FFB787 #ffffff"
-format = '[$all_status$ahead_behind ]($style)'
+style = "bold 135"
 
 [golang]
-style = "bg:#86BBD8 #ffffff"
-format = '[ $symbol($version) ]($style)'
+format = 'via [$symbol]($style)'
 
 [python]
-style = "bg:#86BBD8 #ffffff"
-format = '[ $symbol($version) ]($style)'
-#format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-
-[openstack]
-style = "bg:#06969A #ffffff"
-format = '[ $symbol$cloud(\($project\)) ]($style)'
-
-[docker_context]
-style = "bg:#06969A #ffffff"
-format = '[ $symbol$context ]($style) $path'
+#format = 'via [$symbol](\($virtualenv\)($style)'
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
