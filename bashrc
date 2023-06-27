@@ -19,7 +19,7 @@ fi
 
 NPM_PACKAGES="$HOME/.npm-packages"
 
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/go/bin/:$HOME/.local/bin:$NPM_PACKAGES/bin"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin/:$NPM_PACKAGES/bin"
 
 
 ################################################################
