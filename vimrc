@@ -36,6 +36,10 @@ set list                             " show tabs as characters (>-------)
 set listchars=tab:\ \ ┊,trail:.,extends:…,precedes:…
 set belloff=all                      " disable bell
 
+if has("mouse_sgr")
+    set ttymouse=sgr                 " use SGR mouse mode for correct behavior in Gnome terminal
+end
+
 syntax enable                        " enable syntax highlighting
 filetype plugin indent on            " enable automatic text width-setting
 
@@ -145,6 +149,8 @@ let g:conflict_marker_enable_mappings = 1
 " dense-analysis/ale
 
 let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+let g:ale_python_auto_virtualenv = 1
+let g:ale_python_pylsp_use_global = 1
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_floating_preview = 1
