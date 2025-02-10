@@ -23,6 +23,8 @@ set nojoinspaces                     " don't insert two spaces after eol punctua
 set encoding=utf8                    " set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac                 " use Unix as the standard file type
 set expandtab                        " use spaces instead of tabs
+set shiftwidth=4                     " shift of 4 spaces
+set maxmempattern=2000000            " allow larger search patterns
 set lazyredraw                       " fix potential issue with vim-airline
 set smarttab                         " be smart when using tabs ;)
 set t_Co=256                         " enable 256 colors
@@ -92,7 +94,7 @@ if has("autocmd")
   autocmd FileType hgcommit setlocal textwidth=72 spell
   autocmd FileType yaml setlocal shiftwidth=2
   autocmd FileType css setlocal shiftwidth=2
-  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd FileType go,gomod,gowork setlocal noexpandtab tabstop=4 shiftwidth=4
   autocmd FileType terraform setlocal shiftwidth=2
 
   " Enable Python formatting of '.pyi' files. This comes after the general
@@ -123,10 +125,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'dense-analysis/ale'
-Plug 'sjl/badwolf'
-Plug 'sickill/vim-monokai'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fneu/breezy'
 " Plug 'fatih/vim-go'
 
 call plug#end()
@@ -169,11 +170,8 @@ nnoremap <silent> <Leader>lf <Cmd>ALEFix<CR>
 nnoremap <silent> <Leader>lh <Cmd>ALEHover<CR>
 nnoremap <silent> <Leader>li <Cmd>ALEInfo<CR>
 
-" sjl/badwolf
+" fneu/breezy
 
-"colorscheme badwolf
-"let g:badwolf_darkgutter = 1
-
-" sickill/vim-monokai
-
-colorscheme monokai
+set background=light
+set termguicolors " if you want to run vim in a terminal
+colorscheme breezy
