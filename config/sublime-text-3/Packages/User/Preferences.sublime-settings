@@ -31,7 +31,7 @@
 		"systemctl",
 		"oc",
 	],
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/Monokai.tmTheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"extra_file_exclude_patterns":
@@ -64,7 +64,7 @@
 		".hg",
 		"CVS"
 	],
-	"font_size": 9,
+	"font_size": 8,
 	"ignored_packages":
 	[
 		"Vintage",
@@ -87,4 +87,5 @@
 	"show_line_endings": true,
 	"theme": "predawn-DEV.sublime-theme",
 	"update_check": true,
+	"index_files": true,
 }

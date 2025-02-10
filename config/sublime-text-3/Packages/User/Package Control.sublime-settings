@@ -5,7 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"AutoWrap",
 		"BracketHighlighter",
 		"Colorsublime",
 		"ExportHtml",
@@ -30,9 +29,12 @@
 		"ShellScriptImproved",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
-		"Vue Syntax Highlight",
+		"Terraform",
+		"Toggle Dark Mode",
+		"Vue",
 		"Vuejs Complete Package",
 		"Vuejs Snippets",
 		"Whitespace",
+		"YamlToJson",
 	],
 }
