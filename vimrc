@@ -127,7 +127,7 @@ Plug 'mhinz/vim-signify'
 Plug 'dense-analysis/ale'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fneu/breezy'
+Plug 'morhetz/gruvbox'
 " Plug 'fatih/vim-go'
 
 call plug#end()
@@ -170,8 +170,6 @@ nnoremap <silent> <Leader>lf <Cmd>ALEFix<CR>
 nnoremap <silent> <Leader>lh <Cmd>ALEHover<CR>
 nnoremap <silent> <Leader>li <Cmd>ALEInfo<CR>
 
-" fneu/breezy
-
-set background=light
-set termguicolors " if you want to run vim in a terminal
-colorscheme breezy
+" morhetz/gruvbox
+set background=dark
+colorscheme gruvbox
