@@ -1,14 +1,25 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	fsmonitor = true
+[column]
+	ui = auto
+[commit]
+	verbose = true
 [diff]
+	algorithm = histogram
+	colorMoved = plain
 	renamelimit = 2000
 	renames = true
 	tool = meld
-	noprefix = true
+	mnemonicPrefix = true
+        # noprefix = true
 [push]
 	default = simple
-	autoSetupRemote = 1
+	autoSetupRemote = true
+	followTags = true
+[pull]
+	rebase = true
 [credential]
 	helper = gnome-keyring
 [alias]
@@ -27,12 +38,15 @@
 	publish = !/usr/bin/git-publish
 [rerere]
 	enabled = true
+	autoupdate = true
 [remote "origin"]
 	prune = true
 [fetch]
 	prune = true
+	pruneTags = true
+	all = true
 [help]
-	autocorrect = 1
+	autocorrect = prompt
 [color]
 	ui = auto
 [format]
@@ -44,6 +58,10 @@
 [rebase]
 	rescheduleFailedExec = true
 	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[merge]
+	conflictstyle = zdiff3
 [tag]
 	sort = version:refname
 [init]
