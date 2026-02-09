@@ -12,12 +12,10 @@
 	renamelimit = 2000
 	renames = true
 	tool = meld
-	mnemonicPrefix = true
         # noprefix = true
 [push]
 	default = simple
 	autoSetupRemote = true
-	followTags = true
 [pull]
 	rebase = true
 [credential]
@@ -43,10 +41,9 @@
 	prune = true
 [fetch]
 	prune = true
-	pruneTags = true
 	all = true
 [help]
-	autocorrect = prompt
+	autocorrect = immediate
 [color]
 	ui = auto
 [format]
@@ -59,10 +56,13 @@
 	rescheduleFailedExec = true
 	autoSquash = true
 	autoStash = true
-	updateRefs = true
 [merge]
 	conflictstyle = zdiff3
 [tag]
 	sort = version:refname
 [init]
 	defaultBranch = main
+[http]
+	cookiefile = abc
+[gitreview]
+	username = sfinucan
