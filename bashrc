@@ -46,6 +46,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias dd='dd status=progress'
 alias _='sudo'
+alias vi=vim
 
 function cdiff() {
     diff -u $@ | sed "s/^-/\x1b[31m-/;s/^+/\x1b[32m+/;s/^@/\x1b[34m@/;s/$/\x1b[0m/"
