@@ -19,3 +19,7 @@
 
 # Type checker artefacts
 .pytype
+.mypy_cache
+
+# Claude artefacts
+.claude
