@@ -149,7 +149,7 @@ let g:conflict_marker_enable_mappings = 1
 
 " dense-analysis/ale
 
-let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/pep8', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/py310', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_pylsp_use_global = 1
 let g:ale_completion_enabled = 1
@@ -160,6 +160,7 @@ let g:ale_virtualtext_cursor = 'current'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {'python': ['mypy', 'pylsp', 'ruff']}
 
 " -- Keymaps
 nnoremap <silent> <Leader>le <Cmd>lopen<CR>
