@@ -27,7 +27,7 @@ $character"""
 
 [username]
 show_always = true
-style_user = "bold 199"
+style_user = "bold bright-purple"
 format = "[$user]($style) in "
 
 [hostname]
@@ -40,7 +40,7 @@ style = "bold yellow"
 truncation_symbol = "…/"
 
 [git_branch]
-style = "bold 135"
+style = "bold purple"
 
 [golang]
 format = 'via [$symbol]($style)'
