@@ -128,6 +128,7 @@ Plug 'dense-analysis/ale'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
+Plug 'vimpostor/vim-lumen'
 " Plug 'fatih/vim-go'
 
 call plug#end()
@@ -172,5 +173,6 @@ nnoremap <silent> <Leader>lh <Cmd>ALEHover<CR>
 nnoremap <silent> <Leader>li <Cmd>ALEInfo<CR>
 
 " morhetz/gruvbox
-set background=dark
 colorscheme gruvbox
+autocmd User LumenLight ++nested let g:airline_theme = 'papercolor' | AirlineRefresh
+autocmd User LumenDark  ++nested let g:airline_theme = 'badwolf'    | AirlineRefresh
