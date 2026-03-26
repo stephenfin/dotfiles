@@ -19,7 +19,7 @@ fi
 
 NPM_PACKAGES="$HOME/.npm-packages"
 
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin/:$NPM_PACKAGES/bin"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin/:$NPM_PACKAGES/bin:$HOME/.cargo/bin"
 
 # make podman use docker's config.json
 REGISTRY_AUTH_FILE="$HOME/.docker/config.json"
