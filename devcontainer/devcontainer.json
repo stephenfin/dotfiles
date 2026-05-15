@@ -1,0 +1,10 @@
+{
+  "image": "ghcr.io/bootc-dev/devenv-debian",
+  "customizations": {
+    "devaipod": { "nestedContainers": true }
+  },
+  "runArgs": ["--privileged"],
+  "postCreateCommand": {
+    "devenv-init": "sudo /usr/local/bin/devenv-init.sh"
+  }
+}
