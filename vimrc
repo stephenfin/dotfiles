@@ -150,7 +150,7 @@ let g:conflict_marker_enable_mappings = 1
 
 " dense-analysis/ale
 
-let g:ale_virtualenv_dir_names = ['.tox/shared', '.tox/py310', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+let g:ale_virtualenv_dir_names = ['.tox/mypy', '.tox/pep8', '.tox/py311', '.tox/py312', '.tox/py313', '.tox/py314', '.env', '.venv', 'venv']
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_pylsp_use_global = 1
 let g:ale_completion_enabled = 1
