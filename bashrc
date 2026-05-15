@@ -24,6 +24,9 @@ PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.loca
 # make podman use docker's config.json
 REGISTRY_AUTH_FILE="$HOME/.docker/config.json"
 
+# disable telemetry for various tools
+DO_NOT_TRACK=1
+
 ################################################################
 # Aliases
 ################################################################
