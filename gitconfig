@@ -2,10 +2,12 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 	fsmonitor = true
+        # pager = hunk pager
 [column]
 	ui = auto
 [commit]
 	verbose = true
+	gpgsign = true
 [diff]
 	algorithm = histogram
 	colorMoved = plain
@@ -66,3 +68,9 @@
 	cookiefile = abc
 [gitreview]
 	username = sfinucan
+[trailer "coauthoredby"]
+	key =
+[coderabbit]
+	machineId = cli/93d06cf548b345eda7f20ddc96560487
+[branch]
+	sort = -committerdate
