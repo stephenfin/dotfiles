@@ -156,3 +156,11 @@ fi
 if [ -e ~/.bash/internals ]; then
     source ~/.bash/internals
 fi
+
+# pnpm
+export PNPM_HOME="/home/stephenfin/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
