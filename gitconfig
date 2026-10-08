@@ -1,3 +1,5 @@
+[user]
+	useConfigOnly = true
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
@@ -74,3 +76,14 @@
 	machineId = cli/93d06cf548b345eda7f20ddc96560487
 [branch]
 	sort = -committerdate
+
+[includeIf "gitdir:~/Development/gophercloud/"]
+	path = ~/.gitconfig-redhat
+[includeIf "gitdir:~/Development/innovation/"]
+	path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Development/kubernetes/"]
+	path = ~/.gitconfig-redhat
+[includeIf "gitdir:~/Development/openstack/"]
+	path = ~/.gitconfig-redhat
+[includeIf "gitdir:~/Development/shiftstack/"]
+	path = ~/.gitconfig-redhat
