@@ -26,7 +26,6 @@ set shiftwidth=4                     " shift of 4 spaces
 set maxmempattern=2000000            " allow larger search patterns
 set lazyredraw                       " fix potential issue with vim-airline
 set smarttab                         " be smart when using tabs ;)
-set t_Co=256                         " enable 256 colors
 set linebreak                        " linebreak on 500 characters
 set textwidth=500                    " ...
 set autoindent                       " auto indent
@@ -36,6 +35,10 @@ set list                             " show tabs as characters (>-------)
 set listchars=tab:\ \ ┊,trail:.,extends:…,precedes:…
 set belloff=all                      " disable bell
 set termguicolors                    " turn on 24-bit RGB (true color) support
+
+if !has('nvim')
+    set t_Co=256                     " enable 256 colors
+endif
 
 if has("mouse_sgr")
     set ttymouse=sgr                 " use SGR mouse mode for correct behavior in Gnome terminal

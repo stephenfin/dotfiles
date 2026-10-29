@@ -7,7 +7,7 @@ A collections of dotfiles, mostly for my own use.
 Configuration files for:
 
 - Bash
-- Vim
+- Vim and Neovim
 - Tmux
 - Git
 - Mercurial
@@ -16,7 +16,14 @@ Configuration files for:
 
 ## Configuration
 
-Not much on offer here.
+### Vim and Neovim
+
+Vim and Neovim share the Vimscript settings in `vimrc` and the plugins in
+`vim/`. Neovim's entry point is `config/nvim/init.vim`, which adds `~/.vim`
+to its runtime path and sources `~/.vimrc`. Vim-specific terminal overrides
+are skipped in Neovim.
+
+### Bash
 
 - `.bash/internals`
 
