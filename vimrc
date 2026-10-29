@@ -34,9 +34,9 @@ set autoindent                       " auto indent
 set smartindent                      " smart indent
 set nowrap                           " wrap lines
 set list                             " show tabs as characters (>-------)
-"set listchars=tab:..                 " ...
 set listchars=tab:\ \ ┊,trail:.,extends:…,precedes:…
 set belloff=all                      " disable bell
+set termguicolors                    " turn on 24-bit RGB (true color) support
 
 if has("mouse_sgr")
     set ttymouse=sgr                 " use SGR mouse mode for correct behavior in Gnome terminal
@@ -127,9 +127,8 @@ Plug 'mhinz/vim-signify'
 Plug 'dense-analysis/ale'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 Plug 'vimpostor/vim-lumen'
-" Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -172,7 +171,11 @@ nnoremap <silent> <Leader>lf <Cmd>ALEFix<CR>
 nnoremap <silent> <Leader>lh <Cmd>ALEHover<CR>
 nnoremap <silent> <Leader>li <Cmd>ALEInfo<CR>
 
-" morhetz/gruvbox
-colorscheme gruvbox
-autocmd User LumenLight ++nested let g:airline_theme = 'papercolor' | AirlineRefresh
-autocmd User LumenDark  ++nested let g:airline_theme = 'badwolf'    | AirlineRefresh
+" ayu-theme/ayu-vim
+colorscheme ayu
+
+" vimpostor/vim-lumen
+autocmd User LumenLight ++nested let g:ayucolor = 'light' | colorscheme ayu
+autocmd User LumenLight ++nested let g:airline_theme = 'ayu_light' | AirlineRefresh
+autocmd User LumenDark ++nested let g:ayucolor = 'dark' | colorscheme ayu
+autocmd User LumenDark ++nested let g:airline_theme = 'ayu_dark' | AirlineRefresh
