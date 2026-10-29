@@ -14,7 +14,6 @@ set ignorecase                       " case insensitive search
 set smartcase                        " ...but use case sensitivity if capitilisation present
 set confirm                          " show confirm dialog if file has unsaved changes
 set backspace=indent,eol,start       " make backspace work like most other programs
-set t_kb=
 set mouse=a                          " enable selection of panes with the mouse
 set nofoldenable                     " require manual folding
 set splitbelow                       " ensure vertical splits go below current pane
