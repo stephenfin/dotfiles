@@ -37,6 +37,31 @@ for file in $dotfiles; do
     echo "Created $dst"
 done
 
+# symlink config entries, except Sublime Text which needs special handling
+(
+    shopt -s dotglob nullglob
+    backup_dir="$HOME/.olddot/$(date +%s)/.config"
+    mkdir -p "$HOME/.config" || exit 1
+
+    for src in "$dir/config/"*; do
+        file="${src##*/}"
+        if [ "$file" = "sublime-text-3" ]; then
+            continue
+        fi
+        dst="$HOME/.config/$file"
+
+        if [ -e "$dst" ] || [ -L "$dst" ]; then
+            echo "Backing up existing config: $file"
+            mkdir -p "$backup_dir" || exit 1
+            cp -a -- "$dst" "$backup_dir/$file" || exit 1
+        fi
+
+        rm -rf -- "$dst" || exit 1
+        ln -s -- "$src" "$dst" || exit 1
+        echo "Created $dst"
+    done
+) || exit 1
+
 read -p "Do you want to install Sublime Text configuration? [y]es/[n]o " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
