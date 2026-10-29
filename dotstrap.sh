@@ -131,8 +131,21 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     deploy_link "$src" "$dst" || exit 1
 fi
 
-# set vim as default editor
-sudo update-alternatives --set editor /usr/bin/vim.basic
+# set vim as default editor using the distro's supported mechanism
+if [ -r /etc/os-release ]; then
+    (
+        # shellcheck source=/dev/null
+        . /etc/os-release
+        case "${ID:-}" in
+            debian|ubuntu)
+                sudo update-alternatives --set editor /usr/bin/vim.basic
+                ;;
+            fedora)
+                sudo dnf install vim-default-editor --allowerasing
+                ;;
+        esac
+    )
+fi
 
 # install vim plugins
 vim +PlugInstall +qall
