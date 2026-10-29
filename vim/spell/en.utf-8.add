@@ -253,3 +253,5 @@ Grafana
 positionals
 keybind
 openstacksdk
+tmux
+vimrc
